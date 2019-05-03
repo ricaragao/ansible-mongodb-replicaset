@@ -1,0 +1,17 @@
+storage:
+  dbPath: /var/mongodb/{{ name }}/db
+  wiredTiger:
+    engineConfig:
+        cacheSizeGB: {{ cacheSizeGB }}
+systemLog:
+  path: /var/mongodb/{{ name }}/mongod.log
+  destination: file
+replication:
+  replSetName: {{ name }}-rs
+net:
+  bindIpAll: true
+  port: {{ port }}
+security:
+  keyFile: /var/mongodb/pki/{{ name }}.keyfile
+processManagement:
+  fork : true
