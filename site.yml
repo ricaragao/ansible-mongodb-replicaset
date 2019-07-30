@@ -1,13 +1,13 @@
 ---
-# - name: Install MongoDB
-#   hosts: 
-#     - mongo_servers
-#   remote_user: "{{ os_user }}"
-#   become: yes
-#   become_method: sudo
-#   gather_facts: no
-#   roles:
-#     - mongo_install
+- name: Install MongoDB
+  hosts: 
+    - mongo_servers
+  remote_user: "{{ os_user }}"
+  become: yes
+  become_method: sudo
+  gather_facts: no
+  roles:
+    - mongo_install
 
 - name: Create Config of Instances in MongoDB
   hosts: 
@@ -18,6 +18,17 @@
   gather_facts: no
   roles:
     - prepare_config_instances
+
+
+- name: Start Replicaset
+  hosts: 
+    - mongo_main_server
+  remote_user: "{{ os_user }}"
+  become: yes
+  become_method: sudo
+  gather_facts: no
+  roles:
+    - replicaset
 
 # - name: Prepare Paths Instances in MongoDB
 #   hosts: 

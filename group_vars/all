@@ -1,10 +1,11 @@
-os_user: raragao
+os_user: ubuntu
+mongo_admin_user: admin
+mongo_admin_pass: admin135*
 mongo_packages:
-    - mongodb-org=4.0.9 
-    - mongodb-org-server=4.0.9 
-    - mongodb-org-shell=4.0.9 
-    - mongodb-org-mongos=4.0.9 
-    - mongodb-org-tools=4.0.9
+    - mongodb-org=4.0.10
+    - mongodb-org-server=4.0.10
+    - mongodb-org-shell=4.0.10
+    - mongodb-org-mongos=4.0.10
+    - mongodb-org-tools=4.0.10
 mongo_databases:
-    - {name: 'test01', port: 27101, cacheSizeGB: 0.5 }
-    - {name: 'test02', port: 27102, cacheSizeGB: 1.0 }
+    - {name: 'mymongodb', port: 27101, cacheSizeGB: 1.0 }

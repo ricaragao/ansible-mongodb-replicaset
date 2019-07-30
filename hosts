@@ -1,2 +1,9 @@
 [mongo_servers]
-192.168.0.113
+ubuntu-node-01
+ubuntu-node-02
+
+[mongo_main_server]
+ubuntu-node-01
+
+[mongo_secondaries_servers]
+ubuntu-node-02

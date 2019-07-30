@@ -12,6 +12,7 @@ net:
   bindIpAll: true
   port: {{ port }}
 security:
+  authorization: enabled
   keyFile: /var/mongodb/pki/{{ name }}.keyfile
 processManagement:
   fork : true
